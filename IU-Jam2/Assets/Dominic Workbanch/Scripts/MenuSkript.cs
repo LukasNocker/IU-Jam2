@@ -18,6 +18,11 @@ public class MenuSkript : MonoBehaviour
 
     }
 
+    public void ShowControls()
+    {
+
+    }
+
     public void QuitGame()
     {
         Application.Quit();
