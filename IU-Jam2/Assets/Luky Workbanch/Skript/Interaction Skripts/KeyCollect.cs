@@ -19,7 +19,7 @@ public class KeyCollect : MonoBehaviour
     {
         if(collKey == true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 Debug.Log("collected");
 
@@ -37,7 +37,7 @@ public class KeyCollect : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            Debug.Log("Collect E");
+            Debug.Log("Collect F");
 
             collKey = true;
 
