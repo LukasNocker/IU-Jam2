@@ -6,12 +6,14 @@ public class KeyCollect : MonoBehaviour
 {
 
     private bool collKey;
-   
+
+    public GameObject KeySlot;
 
     private void Start()
     {
         collKey = false;
-       
+
+        KeySlot.SetActive(false);
     }
 
 
@@ -23,7 +25,8 @@ public class KeyCollect : MonoBehaviour
             {
                 Debug.Log("collected");
 
-                
+                Destroy(transform.root.gameObject);
+                KeySlot.SetActive(true);
 
             }
         }

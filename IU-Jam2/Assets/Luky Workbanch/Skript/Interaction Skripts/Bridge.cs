@@ -5,13 +5,18 @@ using UnityEngine;
 public class Bridge : MonoBehaviour
 {
     private bool bridgebuild;
-    private bool bridgeInteract;
 
+    
+
+    public GameObject uiObject;
     
     // Start is called before the first frame update
     void Start()
     {
         bridgebuild = false;
+
+        uiObject.SetActive(false);
+
       
     }
 
@@ -32,7 +37,12 @@ public class Bridge : MonoBehaviour
             {
                 Debug.Log("Not enuoght racoon babys");
             }
-        }
+       }
+       
+       if(Input.GetKeyDown(KeyCode.Space))
+       {
+            uiObject.SetActive(false);
+       }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,6 +53,8 @@ public class Bridge : MonoBehaviour
 
             bridgebuild = true;
 
+            uiObject.SetActive(true);
+           
 
         }
 
@@ -51,4 +63,6 @@ public class Bridge : MonoBehaviour
             bridgebuild = false;
         }
     }
+
+   
 }
