@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Baby
+  - Room 1
   layers:
   - Default
   - TransparentFX
