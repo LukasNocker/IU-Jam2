@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Baby
   - Room 1
+  - Collactable
   layers:
   - Default
   - TransparentFX
