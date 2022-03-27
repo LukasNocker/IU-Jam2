@@ -126,6 +126,8 @@ public class PlayerLevelHandler : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
+        spawnerAbfragen();
+        
         if (coll.gameObject == SpawnerOutside)
         {
             SpielerChar.transform.position = new Vector2(SpawnerOutsideX, SpawnerOutsideY);
