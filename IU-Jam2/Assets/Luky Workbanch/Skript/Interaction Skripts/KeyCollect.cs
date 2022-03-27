@@ -6,12 +6,17 @@ public class KeyCollect : MonoBehaviour
 {
 
     private bool collKey;
-   
+
+    public bool KS1active;
+
+    public GameObject KeySlot;
 
     private void Start()
     {
         collKey = false;
-       
+        KS1active = false;
+
+        KeySlot.SetActive(false);
     }
 
 
@@ -19,11 +24,14 @@ public class KeyCollect : MonoBehaviour
     {
         if(collKey == true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 Debug.Log("collected");
 
-                
+                Destroy(transform.root.gameObject);
+                KeySlot.SetActive(true);
+
+                KS1active = true;
 
             }
         }
@@ -37,7 +45,7 @@ public class KeyCollect : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            Debug.Log("Collect E");
+            Debug.Log("Collect F");
 
             collKey = true;
 
