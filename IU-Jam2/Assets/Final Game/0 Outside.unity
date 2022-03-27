@@ -24411,7 +24411,7 @@ Transform:
   - {fileID: 1234103712}
   - {fileID: 860153903}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1158291135
 GameObject:
@@ -24528,7 +24528,7 @@ Transform:
   - {fileID: 1679646025}
   - {fileID: 1332047206}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1189915938
 GameObject:
@@ -29242,7 +29242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Geschwindigkeit: 3
   WirdGefolgt: {fileID: 1920980064}
-  AbstandZumZielFloat: 0.4
+  AbstandZumZielFloat: 0.3
 --- !u!95 &1603024478
 Animator:
   serializedVersion: 4
@@ -33293,7 +33293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0.03929998, y: -0.20200002, z: 0}
+  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
@@ -33449,7 +33449,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1887638170
 GameObject:
@@ -33734,7 +33734,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1920980066
 MonoBehaviour:
@@ -33754,10 +33754,10 @@ MonoBehaviour:
   babyFollower4: {fileID: 399602210}
   babyFollower5: {fileID: 354252956}
   babyFollower6: {fileID: 467984857}
-  babyFollower7: {fileID: 1648102987}
-  babyFollower8: {fileID: 1679646020}
-  babyFollower9: {fileID: 1332047205}
-  babyFollower10: {fileID: 0}
+  babyFollower7: {fileID: 2140058888}
+  babyFollower8: {fileID: 1648102987}
+  babyFollower9: {fileID: 1679646020}
+  babyFollower10: {fileID: 1332047205}
   SpielerChar: {fileID: 1920980064}
 --- !u!70 &1920980067
 CapsuleCollider2D:
@@ -33917,7 +33917,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -34129,7 +34129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995741427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.659302, y: -4.392, z: -10}
+  m_LocalPosition: {x: 25.62, y: -4.19, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34905,7 +34905,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.855, y: 1}
+    m_SensorSize: {x: 2.0433333, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -34922,11 +34922,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145782899}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.659302, y: -4.392, z: -10}
+  m_LocalPosition: {x: 25.62, y: -4.19, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1844119372}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
