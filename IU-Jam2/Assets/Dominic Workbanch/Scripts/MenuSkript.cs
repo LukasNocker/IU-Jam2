@@ -6,9 +6,17 @@ using UnityEngine.UI;
 
 public class MenuSkript : MonoBehaviour
 {
+    public GameObject CreditScreen;
+    public GameObject ControlScreen;
     // Start is called before the first frame update
     void Start()
     {
+        CreditScreen.SetActive(false);
+        print("Deaktiviert");
+
+        ControlScreen.SetActive(false);
+        print("Control Deactiviert");
+
         if (!PlayerPrefs.HasKey("musicVolume"))
         {
             PlayerPrefs.SetFloat("musicVolume", 1);
@@ -18,6 +26,8 @@ public class MenuSkript : MonoBehaviour
         {
             Load();
         }
+// HideCredits();
+        
     }
 
     // Update is called once per frame
@@ -33,34 +43,30 @@ public class MenuSkript : MonoBehaviour
 
     }
 
-    public void ShowCredits(GameObject obj)
+    public void ShowCredits()
     {
-        obj.SetActive(true);
+        CreditScreen.SetActive(true);
+        print("Show Credits");
     }
 
-    public void HideCredits(GameObject obj)
+    public void HideCredits()
     {
-        obj.SetActive(false);
+        CreditScreen.SetActive(false);
     }
 
-    public void ShowControls(GameObject obj)
+    public void ShowControls()
     {
-        obj.SetActive(true);
+        ControlScreen.SetActive(true);
     }
 
-    public void HideControls(GameObject obj)
+    public void HideControls()
     {
-        obj.SetActive(false);
+        ControlScreen.SetActive(false);
     }
 
     public void QuitGame()
     {
         Application.Quit();
-    }
-
-    public void BackToMenu()
-    {
-
     }
 
     public void ChangeVolume()
