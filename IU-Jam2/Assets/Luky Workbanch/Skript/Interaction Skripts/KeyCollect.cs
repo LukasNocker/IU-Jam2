@@ -7,11 +7,14 @@ public class KeyCollect : MonoBehaviour
 
     private bool collKey;
 
+    public bool KS1active;
+
     public GameObject KeySlot;
 
     private void Start()
     {
         collKey = false;
+        KS1active = false;
 
         KeySlot.SetActive(false);
     }
@@ -27,6 +30,8 @@ public class KeyCollect : MonoBehaviour
 
                 Destroy(transform.root.gameObject);
                 KeySlot.SetActive(true);
+
+                KS1active = true;
 
             }
         }
