@@ -81,4 +81,19 @@ public class CharakterController : MonoBehaviour
 
 
     }
+
+    private void Update()
+    {
+        PositionChange();
+    }
+    private void PositionChange()
+    {
+        void OnTriggerEnter2D(Collider2D collision)
+        {
+          if(collision.CompareTag("Room 1"))
+          {
+
+          }
+        }
+    }
 }
