@@ -7,6 +7,8 @@ TagManager:
   - Baby
   - Room 1
   - Collactable
+  - Cookie
+  - WBB
   layers:
   - Default
   - TransparentFX

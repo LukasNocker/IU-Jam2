@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharakterController : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-
+    // baby collect variables
     WWBAnim wbbAnim0;
     WWBAnim wbbAnim1;
     WWBAnim wbbAnim2;
@@ -29,7 +30,18 @@ public class CharakterController : MonoBehaviour
     public GameObject WBB8;
     public GameObject WBB9;
 
+    //cookie collect variables 
+    public int cookies = 0;
+    private bool getcookie;
+    GameObject cookieToDestroy;
+    public Text CookieCounter;
 
+
+    //WBB collect varibales
+    public int waschbärbabys = 0;
+    public bool getWBB;
+    GameObject WBBToDestroy;
+    public Text WBBCounter;
 
     // movement variables
     private float moveH;
@@ -54,6 +66,13 @@ public class CharakterController : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        getcookie = false;
+
+        getWBB = false;
+    }
+  
     private void FixedUpdate()
     {
         moveH = Input.GetAxis("Horizontal") * moveSpeed;
@@ -84,16 +103,66 @@ public class CharakterController : MonoBehaviour
 
     private void Update()
     {
-        PositionChange();
-    }
-    private void PositionChange()
-    {
-        void OnTriggerEnter2D(Collider2D collision)
+       if(getcookie == true)
         {
-          if(collision.CompareTag("Room 1"))
-          {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Destroy(cookieToDestroy);
+                cookies += 1;
+                CookieCounter.text = cookies.ToString();
 
-          }
+                getcookie = false;
+                
+            }
+       }
+       
+       if(getWBB == true)
+       {
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                Destroy(WBBToDestroy);
+                waschbärbabys += 1;
+                WBBCounter.text = waschbärbabys.ToString();
+
+                getWBB = false;
+            }
+       }
+    }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Cookie"))
+        {
+            getcookie = true;
+            
+            cookieToDestroy = collision.gameObject;
+        }
+
+        if (collision.CompareTag("Baby"))
+        {
+            getWBB = true;
+
+            WBBToDestroy = collision.gameObject;
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Cookie"))
+        {
+            getcookie = false;
+        }
+        
+        if(collision.CompareTag("Baby"))
+        {
+            getWBB = false;
         }
     }
+
+   
+
+  
 }

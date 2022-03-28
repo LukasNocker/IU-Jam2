@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BabyAktivierer : MonoBehaviour
 {
@@ -32,7 +33,8 @@ public class BabyAktivierer : MonoBehaviour
 
     private float positionSpielerCharX;
     private float positionSpielerCharY;
-    
+
+    private bool activateReady;
 
     void Start()
     {
@@ -46,71 +48,104 @@ public class BabyAktivierer : MonoBehaviour
         babyFollower8.SetActive(false);
         babyFollower9.SetActive(false);
         babyFollower10.SetActive(false);
+
+        activateReady = false;
     }
     void addBaby()
     {
         babyCounter++;
     }
-    
-    void OnTriggerEnter2D(Collider2D coll)
+
+    private void Update()
+    {
+       
+        if (activateReady == true)
+        {
+           if(Input.GetKeyDown(KeyCode.F))
+            {
+                addBaby();
+                positionSpielerAbfragen();
+                if (babyCounter == 1)
+                {
+                    /* babySammelbar1.SetActive(false); */
+                    babyFollower1.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
+                    babyFollower1.SetActive(true);
+
+                    activateReady = false;
+                }
+                else if (babyCounter == 2)
+                {
+                    /* babySammelbar2.SetActive(false); */
+                    babyFollower2.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
+                    babyFollower2.SetActive(true);
+
+                    activateReady = false;
+                }
+                else if (babyCounter == 3)
+                {
+                    /* babySammelbar4.SetActive(false); */
+                    babyFollower3.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
+                    babyFollower3.SetActive(true);
+
+                    activateReady = false;
+                }
+                else if (babyCounter == 4)
+                {
+                    babyFollower4.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
+                    babyFollower4.SetActive(true);
+
+                    activateReady = false;
+                }
+                else if (babyCounter == 5)
+                {
+                    babyFollower5.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
+                    babyFollower5.SetActive(true);
+
+                    activateReady = false;
+                }
+                else if (babyCounter == 6)
+                {
+                    babyFollower6.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
+                    babyFollower6.SetActive(true);
+
+                    activateReady = false;
+                }
+                else if (babyCounter == 7)
+                {
+                    babyFollower7.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
+                    babyFollower7.SetActive(true);
+
+                    activateReady = false;
+                }
+                else if (babyCounter == 8)
+                {
+                    babyFollower8.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
+                    babyFollower8.SetActive(true);
+
+                    activateReady = false;
+                }
+                else if (babyCounter == 9)
+                {
+                    babyFollower9.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
+                    babyFollower9.SetActive(true);
+
+                    activateReady = false;
+                }
+                else if (babyCounter == 10)
+                {
+                    babyFollower10.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
+                    babyFollower10.SetActive(true);
+
+                    activateReady = false;
+                }
+            }
+        }
+    }
+    void OnTriggerStay2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Baby")
         {
-            addBaby();
-            positionSpielerAbfragen();
-            if (babyCounter == 1)
-            {
-                /* babySammelbar1.SetActive(false); */
-                babyFollower1.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
-                babyFollower1.SetActive(true);
-            }
-            else if (babyCounter == 2)
-            {
-                /* babySammelbar2.SetActive(false); */
-                babyFollower2.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
-                babyFollower2.SetActive(true);
-            }
-            else if (babyCounter == 3)
-            {
-                /* babySammelbar4.SetActive(false); */
-                babyFollower3.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
-                babyFollower3.SetActive(true);
-            }
-            else if (babyCounter == 4)
-            {
-                babyFollower4.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
-                babyFollower4.SetActive(true);
-            }
-            else if (babyCounter == 5)
-            {
-                babyFollower5.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
-                babyFollower5.SetActive(true);
-            }
-            else if (babyCounter == 6)
-            {
-                babyFollower6.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
-                babyFollower6.SetActive(true);
-            }
-            else if (babyCounter == 7)
-            {
-                babyFollower7.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
-                babyFollower7.SetActive(true);
-            }
-            else if (babyCounter == 8)
-            {
-                babyFollower8.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
-                babyFollower8.SetActive(true);
-            }
-            else if (babyCounter == 9)
-            {
-                babyFollower9.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
-                babyFollower9.SetActive(true);
-            }
-            else if (babyCounter == 10)
-            {
-                babyFollower10.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
-                babyFollower10.SetActive(true);
-            }
+            activateReady = true;
         }
 
         print("Baby Counter: " + babyCounter);
