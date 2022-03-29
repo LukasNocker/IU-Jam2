@@ -129,6 +129,8 @@ public class CharakterController : MonoBehaviour
                 cookies -= 3;
 
                 getWBB = false;
+
+              
             }
        }
     }
@@ -144,7 +146,7 @@ public class CharakterController : MonoBehaviour
             cookieToDestroy = collision.gameObject;
         }
 
-        if (collision.CompareTag("Baby") && cookies >= 2)
+        if (collision.CompareTag("Baby") && cookies >= 3)
         {
             getWBB = true;
 

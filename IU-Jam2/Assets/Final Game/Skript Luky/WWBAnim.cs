@@ -9,7 +9,7 @@ public class WWBAnim : MonoBehaviour
 
     //animation numerator
     public string[] idleDirections = { "BIdle N", "BIdle NW", "BIdle W", "BIdle SW", "BIdle S", "BIdle SO", "BIdle O", "BIdle NO" };
-    public string[] runDirections = { "BRun N", "BRun NW", "BRun W", "BRun SW", "BRun S", "Brun SO", "BrunO", "BRun NO" };
+    public string[] runDirections = { "BRun N", "BRun NW", "BRun W", "BRun SW", "BRun S", "BRun SO", "BRunO", "BRun NO" };
 
     int lastDirection;
 

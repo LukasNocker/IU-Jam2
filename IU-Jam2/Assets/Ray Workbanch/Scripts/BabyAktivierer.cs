@@ -8,6 +8,8 @@ public class BabyAktivierer : MonoBehaviour
     private int babyCounter;
  
     public GameObject SpielerChar;
+  
+        
     
    
 
@@ -39,8 +41,10 @@ public class BabyAktivierer : MonoBehaviour
     private float positionSpielerCharY;
 
     private bool activateReady;
+ 
 
-    
+
+
 
     void Start()
     {
@@ -56,6 +60,7 @@ public class BabyAktivierer : MonoBehaviour
         babyFollower10.SetActive(false);
 
         activateReady = false;
+        
 
         
     }
@@ -66,10 +71,15 @@ public class BabyAktivierer : MonoBehaviour
 
     private void Update()
     {
+
        
-        if (activateReady == true )
+        
+
+        if (activateReady == true)
         {
-           if(Input.GetKeyDown(KeyCode.F))
+           
+
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 addBaby();
                 positionSpielerAbfragen();
@@ -156,11 +166,21 @@ public class BabyAktivierer : MonoBehaviour
             activateReady = true;
         }
 
-        print("Baby Counter: " + babyCounter);
+       
     }
+    private void OnTriggerExit2D(Collider2D coll)
+    {
+        if(coll.gameObject.tag == "Baby")
+        {
+            activateReady = false;
+        }
+    }
+
     void positionSpielerAbfragen()
     {
         positionSpielerCharX = SpielerChar.transform.position.x;
         positionSpielerCharY = SpielerChar.transform.position.y;
     }
+    
+    
 }
