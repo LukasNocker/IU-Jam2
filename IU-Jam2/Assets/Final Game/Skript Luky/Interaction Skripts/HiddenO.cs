@@ -8,6 +8,8 @@ public class HiddenO : MonoBehaviour
     public GameObject searchIcon;
     public GameObject cookie;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {

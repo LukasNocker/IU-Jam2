@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class BabyAktivierer : MonoBehaviour
 {
     private int babyCounter;
+ 
+    public GameObject SpielerChar;
+    
+   
 
     public GameObject babyFollower1;
     public GameObject babyFollower2;
@@ -29,12 +33,14 @@ public class BabyAktivierer : MonoBehaviour
     public GameObject babySammelbar9;
     public GameObject babySammelbar10;
     */
-    public GameObject SpielerChar;
+    
 
     private float positionSpielerCharX;
     private float positionSpielerCharY;
 
     private bool activateReady;
+
+    
 
     void Start()
     {
@@ -50,6 +56,8 @@ public class BabyAktivierer : MonoBehaviour
         babyFollower10.SetActive(false);
 
         activateReady = false;
+
+        
     }
     void addBaby()
     {
@@ -59,7 +67,7 @@ public class BabyAktivierer : MonoBehaviour
     private void Update()
     {
        
-        if (activateReady == true)
+        if (activateReady == true )
         {
            if(Input.GetKeyDown(KeyCode.F))
             {

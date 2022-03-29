@@ -34,7 +34,7 @@ public class CharakterController : MonoBehaviour
     public int cookies = 0;
     private bool getcookie;
     GameObject cookieToDestroy;
-    public Text CookieCounter;
+    public UnityEngine.UI.Text CookieCounter;
 
 
     //WBB collect varibales
@@ -103,13 +103,17 @@ public class CharakterController : MonoBehaviour
 
     private void Update()
     {
-       if(getcookie == true)
+       
+       
+        
+        
+        if(getcookie == true)
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Destroy(cookieToDestroy);
                 cookies += 1;
-                CookieCounter.text = cookies.ToString();
+                
 
                 getcookie = false;
                 
@@ -122,7 +126,7 @@ public class CharakterController : MonoBehaviour
             {
                 Destroy(WBBToDestroy);
                 waschbärbabys += 1;
-                WBBCounter.text = waschbärbabys.ToString();
+                cookies -= 3;
 
                 getWBB = false;
             }
@@ -140,7 +144,7 @@ public class CharakterController : MonoBehaviour
             cookieToDestroy = collision.gameObject;
         }
 
-        if (collision.CompareTag("Baby"))
+        if (collision.CompareTag("Baby") && cookies >= 2)
         {
             getWBB = true;
 
