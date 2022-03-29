@@ -30941,7 +30941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Geschwindigkeit: 3
   WirdGefolgt: {fileID: 1920980064}
-  AbstandZumZielFloat: 0.3
+  AbstandZumZielFloat: 0.4
 --- !u!95 &1603024478
 Animator:
   serializedVersion: 4
@@ -35560,6 +35560,7 @@ GameObject:
   - component: {fileID: 1920980068}
   - component: {fileID: 1920980067}
   - component: {fileID: 1920980074}
+  - component: {fileID: 1920980075}
   m_Layer: 0
   m_Name: Charakter
   m_TagString: Player
@@ -35756,9 +35757,32 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920980064}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d48d40a7a5f4a0d409f08c5d2bcc387b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpielerChar: {fileID: 1920980064}
+  babyFollower1: {fileID: 1603024475}
+  babyFollower2: {fileID: 556495738}
+  babyFollower3: {fileID: 494773029}
+  babyFollower4: {fileID: 399602210}
+  babyFollower5: {fileID: 354252956}
+  babyFollower6: {fileID: 467984857}
+  babyFollower7: {fileID: 2140058888}
+  babyFollower8: {fileID: 1648102987}
+  babyFollower9: {fileID: 1679646020}
+  babyFollower10: {fileID: 1332047205}
+--- !u!114 &1920980075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920980064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4759e5ea5baa6842ba921c77f462386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SpielerChar: {fileID: 1920980064}
