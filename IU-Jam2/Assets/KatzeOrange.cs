@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Katze1 : MonoBehaviour
+public class KatzeOrange : MonoBehaviour
 {
     private bool interact;
 
@@ -12,10 +12,10 @@ public class Katze1 : MonoBehaviour
 
     public GameObject cookie1;
     public GameObject cookie2;
-    public GameObject cookie3;
 
-    public GameObject WBBneed1;
-    public GameObject WBBhave1;
+
+    public GameObject WBBneed4;
+    public GameObject WBBhave4;
 
     private void Start()
     {
@@ -23,14 +23,14 @@ public class Katze1 : MonoBehaviour
 
         cookie1.SetActive(false);
         cookie2.SetActive(false);
-        cookie3.SetActive(false);
+      
 
         charakterController = Charakter.GetComponent<CharakterController>();
     }
 
     private void Update()
     {
-        if(charakterController.waschbärbabys >= 1)
+        if (charakterController.waschbärbabys >= 5)
         {
             if (interact == true)
             {
@@ -40,7 +40,7 @@ public class Katze1 : MonoBehaviour
 
                     cookie1.SetActive(true);
                     cookie2.SetActive(true);
-                    cookie3.SetActive(true);
+                   
 
                     interact = false;
                 }
@@ -50,31 +50,31 @@ public class Katze1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             interact = true;
 
-            if(charakterController.waschbärbabys >=1)
+            if (charakterController.waschbärbabys >= 5)
             {
-                WBBhave1.SetActive(true);
+                WBBhave4.SetActive(true);
 
             }
-            
-            if(charakterController.waschbärbabys <=0)
+
+            if (charakterController.waschbärbabys <= 4)
             {
-                WBBneed1.SetActive(true);
+                WBBneed4.SetActive(true);
             }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             interact = false;
 
-            WBBhave1.SetActive(false);
-            WBBneed1.SetActive(false);
+            WBBhave4.SetActive(false);
+            WBBneed4.SetActive(false);
         }
     }
 }

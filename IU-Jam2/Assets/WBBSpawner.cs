@@ -10,7 +10,7 @@ public class WBBSpawner : MonoBehaviour
 
     CharakterController charakterController;
 
-
+    public GameObject babyFollower0;
 
     public GameObject babyFollower1;
     public GameObject babyFollower2;
@@ -72,6 +72,13 @@ public class WBBSpawner : MonoBehaviour
         {
 
             positionSpielerAbfragen();
+
+            babyFollower0.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
+            babyFollower0.SetActive(true);
+
+
+
+
             if (charakterController.waschbärbabys == 1)
             {
                 /* babySammelbar1.SetActive(false); */

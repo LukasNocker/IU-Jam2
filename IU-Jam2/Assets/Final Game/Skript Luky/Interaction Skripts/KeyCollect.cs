@@ -28,7 +28,7 @@ public class KeyCollect : MonoBehaviour
             {
                 Debug.Log("collected");
 
-                Destroy(transform.root.gameObject);
+                Destroy(gameObject);
                 KeySlot.SetActive(true);
 
                 KS1active = true;
@@ -45,7 +45,7 @@ public class KeyCollect : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            Debug.Log("Collect F");
+           
 
             collKey = true;
 

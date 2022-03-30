@@ -9,13 +9,26 @@ public class Katzenklappe : MonoBehaviour
     public GameObject katzenklappeInteraction;
     public GameObject player;
 
-    public GameObject WBB0;
+    public GameObject WBBneed2;
+    public GameObject WBBhave2;
+
+    public GameObject Charakter;
+
+    CharakterController charakterController;
+
+    public GameObject canvas;
+    public GameObject finalcutscene;
+
+    public GameObject cutCanvas;
     
     // Start is called before the first frame update
     void Start()
     {
         search = false;
         katzenklappeInteraction.SetActive(false);
+        charakterController = Charakter.GetComponent<CharakterController>();
+
+        cutCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,25 +37,32 @@ public class Katzenklappe : MonoBehaviour
        if(Input.GetKeyDown(KeyCode.Space))
        {
             katzenklappeInteraction.SetActive(false);
-       }
+           
+            
+                canvas.SetActive(true);
+                cutCanvas.SetActive(false);
+                finalcutscene.SetActive(false);
+                
+            
+        }
        
         if (search == true)
         {
-            if (Input.GetKeyDown(KeyCode.E)) // and WBB Couner = 1
+            if (Input.GetKeyDown(KeyCode.E) && charakterController.waschbärbabys >= 2) 
             {
-                Debug.Log("oh i found a cookie");
-
-                Debug.Log("oh i flound one of my babys");
-                //Trigger Brakin Cutscene
+               
 
                 player.transform.position = new Vector2(19, 1);
                 search = false;
 
-                WBB0.transform.position = new Vector2(19, 1);
+                canvas.SetActive(false);
+                cutCanvas.SetActive(true);
+                finalcutscene.SetActive(true);
 
-
-
+               
+                
             }
+           
         }
     }
 
@@ -50,17 +70,35 @@ public class Katzenklappe : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Interact E");
+           
 
             katzenklappeInteraction.SetActive(true);
             search = true;
 
+            if(charakterController.waschbärbabys <= 1)
+            {
+                WBBneed2.SetActive(true);
+            }
 
+            else if(charakterController.waschbärbabys >=2)
+            {
+                WBBhave2.SetActive(true);
+            }
         }
 
-        else 
+       
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
+
+            WBBneed2.SetActive(false);
+            WBBhave2.SetActive(false);
+
             search = false;
+
+
         }
     }
 }

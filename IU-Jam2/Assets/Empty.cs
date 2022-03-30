@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HiddenO : MonoBehaviour
+public class Empty : MonoBehaviour
 {
     private bool search;
     public GameObject searchIcon;
-    public GameObject cookie;
+   
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class HiddenO : MonoBehaviour
         search = false;
 
         searchIcon.SetActive(false);
-        cookie.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class HiddenO : MonoBehaviour
             {
                 
                 searchIcon.SetActive(false);
-                cookie.SetActive(true);
+                
 
                 //Spawn game Object: Cookie
             }
@@ -46,7 +46,7 @@ public class HiddenO : MonoBehaviour
 
         }
 
-        
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
