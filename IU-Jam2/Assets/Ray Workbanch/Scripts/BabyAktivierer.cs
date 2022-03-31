@@ -32,8 +32,6 @@ public class BabyAktivierer : MonoBehaviour
 
     private float positionSpielerCharX;
     private float positionSpielerCharY;
-
-	public AudioSource BabyWaschbaerSchnurrt;
     
 
     void Start()
@@ -65,63 +63,53 @@ public class BabyAktivierer : MonoBehaviour
                 /* babySammelbar1.SetActive(false); */
                 babyFollower1.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
                 babyFollower1.SetActive(true);
-				playWaschbaerbabySchnurrtSound();
             }
             else if (babyCounter == 2)
             {
                 /* babySammelbar2.SetActive(false); */
                 babyFollower2.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
                 babyFollower2.SetActive(true);
-				playWaschbaerbabySchnurrtSound();
             }
             else if (babyCounter == 3)
             {
                 /* babySammelbar4.SetActive(false); */
                 babyFollower3.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
                 babyFollower3.SetActive(true);
-				playWaschbaerbabySchnurrtSound();
             }
             else if (babyCounter == 4)
             {
                 babyFollower4.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
                 babyFollower4.SetActive(true);
-				playWaschbaerbabySchnurrtSound();
             }
             else if (babyCounter == 5)
             {
                 babyFollower5.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
                 babyFollower5.SetActive(true);
-				playWaschbaerbabySchnurrtSound();
             }
             else if (babyCounter == 6)
             {
                 babyFollower6.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
                 babyFollower6.SetActive(true);
-				playWaschbaerbabySchnurrtSound();
             }
             else if (babyCounter == 7)
             {
                 babyFollower7.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
                 babyFollower7.SetActive(true);
-				playWaschbaerbabySchnurrtSound();
             }
             else if (babyCounter == 8)
             {
                 babyFollower8.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
                 babyFollower8.SetActive(true);
-				playWaschbaerbabySchnurrtSound();
             }
             else if (babyCounter == 9)
             {
                 babyFollower9.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
                 babyFollower9.SetActive(true);
-				playWaschbaerbabySchnurrtSound();
             }
             else if (babyCounter == 10)
             {
                 babyFollower10.transform.position = new Vector2(positionSpielerCharX, positionSpielerCharY);
                 babyFollower10.SetActive(true);
-				playWaschbaerbabySchnurrtSound();
             }
         }
 
@@ -132,12 +120,4 @@ public class BabyAktivierer : MonoBehaviour
         positionSpielerCharX = SpielerChar.transform.position.x;
         positionSpielerCharY = SpielerChar.transform.position.y;
     }
-
-	
-
-   	// Play
-   	void playWaschbaerbabySchnurrtSound()
-  	 {
-       BabyWaschbaerSchnurrt.Play();
-  	 }
 }

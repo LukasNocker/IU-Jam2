@@ -5,14 +5,7 @@ using UnityEngine;
 public class HouseBreakin : MonoBehaviour
 {
     private bool breakin;
-    
-    // Header
-    public AudioSource GlasZerbricht;
-    // Play
-    void playGlasZerbrichtSound()
-    {
-        GlasZerbricht.Play();
-    }
+
 
 
     // Start is called before the first frame update
@@ -31,8 +24,8 @@ public class HouseBreakin : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))//&& Anzahl an WWB > ?
             {
                 Debug.Log("Trigger Breakin Scene");
-                playGlasZerbrichtSound(); // Muss im inspector noch zugewiesen werden.
 
+               
             }
 
 
