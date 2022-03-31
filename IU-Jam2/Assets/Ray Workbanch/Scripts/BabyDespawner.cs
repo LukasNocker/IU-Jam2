@@ -5,14 +5,39 @@ using UnityEngine;
 public class BabyDespawner : MonoBehaviour
 {
     public GameObject babySammelbar;
-    void OnTriggerEnter2D(Collider2D coll)
+
+    private bool WBBcollected;
+    GameObject WWBtoDetroy;
+
+
+    private void Start()
+    {
+        WBBcollected = false;
+    }
+
+    private void Update()
+    {
+      if(WBBcollected == true)
+      {
+         if(Input.GetKeyDown(KeyCode.F))
+         {
+                Destroy(babySammelbar);
+
+                WBBcollected = false;
+         }
+      }
+    }
+
+    void OntriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Player")
         {
-            print("Kollision mit Spieler wurde vom Despawner erkannt!");
-            babySammelbar.SetActive(false);
+            WBBcollected = true;
+
+            WWBtoDetroy = coll.gameObject;
         }
 
-        print("Ohne vorherigen Text, stimmt hier etwas nicht");
+
     }
+
 }

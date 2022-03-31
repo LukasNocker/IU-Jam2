@@ -18,6 +18,7 @@ public class Babyfollow : MonoBehaviour
     void Start()
     {
         ziel = WirdGefolgt.GetComponent<Transform>();
+       
     }
 
     // Update is called once per frame
