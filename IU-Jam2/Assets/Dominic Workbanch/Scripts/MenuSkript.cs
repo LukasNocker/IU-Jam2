@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+// namespace for scene change
+using UnityEngine.SceneManagement;
 
 public class MenuSkript : MonoBehaviour
 {
     public GameObject CreditScreen;
     public GameObject ControlScreen;
+
+    public AudioSource MenuSound;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +45,8 @@ public class MenuSkript : MonoBehaviour
 
     public void PlayGame()
     {
-
+        menuSoundStop();
+        SceneManager.LoadScene("0 Outside"); // load scene with name
     }
 
     public void ShowCredits()
@@ -84,5 +90,9 @@ public class MenuSkript : MonoBehaviour
     {
         PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
     }
-    
+
+    private void menuSoundStop()
+    {
+        MenuSound.Stop();
+    }
 }

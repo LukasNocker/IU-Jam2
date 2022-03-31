@@ -21,6 +21,10 @@ public class HiddenObject : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("oh i found a cookie");
+                
+                playPickupSound();  // Bei Verwendung des Scripts auf einem GameObject,
+                                    // muss der entsprechende Sound, noch in das dazugehörige
+                                    // Feld im Inspector gezogen werden.
 
                 //Spawn game Object: Cookie
             }
@@ -42,5 +46,12 @@ public class HiddenObject : MonoBehaviour
         {
             search = false;
         }
+    }
+    // Header
+    public AudioSource Pickup;
+    // Play
+    void playPickupSound()
+    {
+        Pickup.Play();
     }
 }
