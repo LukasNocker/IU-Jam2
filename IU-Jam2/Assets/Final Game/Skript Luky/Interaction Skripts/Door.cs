@@ -9,6 +9,8 @@ public class Door : MonoBehaviour
     KeyCollect keyCollect;
     public GameObject Key;
 
+    public GameObject needkey;
+
     private void Awake()
     {
         keyCollect = Key.GetComponent<KeyCollect>();
@@ -17,6 +19,7 @@ public class Door : MonoBehaviour
     void Start()
     {
         open = false;
+        needkey.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,9 +32,10 @@ public class Door : MonoBehaviour
                
                 if(keyCollect.KS1active == true)
                 {
-                    Debug.Log("Door is open");
+                    
 
                     keyCollect.KeySlot.SetActive(false);
+                    Destroy(gameObject);
 
                 }
 
@@ -43,17 +47,25 @@ public class Door : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Interact E");
+           
 
             // TextBox: Vöt. kann ich da ja ein Baby durchschicken
             open = true;
 
+            needkey.SetActive(true);
+
 
         }
 
-        else
+       
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
             open = false;
+
+            needkey.SetActive(false);
         }
     }
 }

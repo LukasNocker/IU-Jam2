@@ -6,7 +6,7 @@ public class Katzenklappe : MonoBehaviour
 {
     private bool search;
 
-    public GameObject katzenklappeInteraction;
+   
     public GameObject player;
 
     public GameObject WBBneed2;
@@ -20,15 +20,25 @@ public class Katzenklappe : MonoBehaviour
     public GameObject finalcutscene;
 
     public GameObject cutCanvas;
-    
+
+    public GameObject Glasbroke;
+    public GameObject Glasganz;
+    public GameObject Splitter;
+
+    public GameObject FensterColl;
+
     // Start is called before the first frame update
     void Start()
     {
         search = false;
-        katzenklappeInteraction.SetActive(false);
+       
         charakterController = Charakter.GetComponent<CharakterController>();
 
         cutCanvas.SetActive(false);
+        Glasbroke.SetActive(false);
+        FensterColl.SetActive(false);
+        Splitter.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -36,15 +46,17 @@ public class Katzenklappe : MonoBehaviour
     {
        if(Input.GetKeyDown(KeyCode.Space))
        {
-            katzenklappeInteraction.SetActive(false);
+            
            
             
                 canvas.SetActive(true);
                 cutCanvas.SetActive(false);
                 finalcutscene.SetActive(false);
-                
             
-        }
+
+
+
+       }
        
         if (search == true)
         {
@@ -52,15 +64,18 @@ public class Katzenklappe : MonoBehaviour
             {
                
 
-                player.transform.position = new Vector2(19, 1);
+                
                 search = false;
 
                 canvas.SetActive(false);
                 cutCanvas.SetActive(true);
                 finalcutscene.SetActive(true);
+                Splitter.SetActive(true);
+                Glasbroke.SetActive(true);
+                FensterColl.SetActive(true);
+                Glasganz.SetActive(false);
 
-               
-                
+
             }
            
         }
@@ -72,7 +87,7 @@ public class Katzenklappe : MonoBehaviour
         {
            
 
-            katzenklappeInteraction.SetActive(true);
+            
             search = true;
 
             if(charakterController.waschbärbabys <= 1)

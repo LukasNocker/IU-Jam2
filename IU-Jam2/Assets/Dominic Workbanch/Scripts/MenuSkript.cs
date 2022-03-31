@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class MenuSkript : MonoBehaviour
 {
     public GameObject CreditScreen;
@@ -40,7 +41,8 @@ public class MenuSkript : MonoBehaviour
 
     public void PlayGame()
     {
-
+        SceneManager.LoadScene("0 Outside");
+        Debug.Log("Scene tried to load");
     }
 
     public void ShowCredits()

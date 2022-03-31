@@ -56,7 +56,7 @@ public class RegalMove : MonoBehaviour
             interact = false;
            
             WBBneed3.SetActive(false);
-            WBBneed3.SetActive(false);
+            WBBhave3.SetActive(false);
         }
     }
 }

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CharakterController : MonoBehaviour
 {
     private Rigidbody2D rb;
+
+    public GameObject door;
 
     // baby collect variables
     WWBAnim wbbAnim0;
@@ -34,14 +37,14 @@ public class CharakterController : MonoBehaviour
     public int cookies = 0;
     private bool getcookie;
     GameObject cookieToDestroy;
-    public UnityEngine.UI.Text CookieCounter;
+    public TextMeshProUGUI cookieCounter;
 
 
     //WBB collect varibales
     public int waschbärbabys = 0;
     public bool getWBB;
     GameObject WBBToDestroy;
-    public Text WBBCounter;
+    public TextMeshProUGUI wbbCounter;
 
     // movement variables
     private float moveH;
@@ -71,10 +74,16 @@ public class CharakterController : MonoBehaviour
         getcookie = false;
 
         getWBB = false;
+
+        door.SetActive(false);
     }
   
     private void FixedUpdate()
     {
+        cookieCounter.text = cookies.ToString();
+        wbbCounter.text = waschbärbabys.ToString();
+        
+        
         moveH = Input.GetAxis("Horizontal") * moveSpeed;
 
         moveV = Input.GetAxis("Vertical") * moveSpeed;
